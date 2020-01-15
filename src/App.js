@@ -11,15 +11,29 @@ class App extends Component {
       <Router>
         <div className="demo-big-content">
           <Layout>
-            <Header className="header-color" title="Title" scroll>
+            <Header
+              className="header-color"
+              title={
+                <Link to="/" className="mdl-navigation__link">
+                  Portfolio
+                </Link>
+              }
+              scroll
+            >
               <Navigation>
                 <Link to="/resume">Resume</Link>
-                <Link to="/about">About me</Link>
+                <Link to="/about">About</Link>
                 <Link to="/projects">Projects</Link>
                 <Link to="/contact">Contact</Link>
               </Navigation>
             </Header>
-            <Drawer title="Title">
+            <Drawer
+              title={
+                <Link to="/" className="mdl-navigation__link">
+                  Portfolio
+                </Link>
+              }
+            >
               <Navigation>
                 <Link to="/resume">Resume</Link>
                 <Link to="/about">About me</Link>
