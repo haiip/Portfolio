@@ -1,9 +1,50 @@
 import React, { Component } from "react";
-import { Grid, Cell } from "react-mdl";
+import {
+  Grid,
+  Cell,
+  Spinner,
+  List,
+  ListItem,
+  ListItemContent
+} from "react-mdl";
 import { Avatar } from "../common/avatar";
+import { getRespositories } from "../../api";
+
+const Repository = ({ name }) => (
+  <ListItem>
+    <ListItemContent>{name}</ListItemContent>
+  </ListItem>
+);
 
 class Landingpage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: false,
+      repos: []
+    };
+  }
+  componentDidMount() {
+    this.setState({ loading: true });
+
+    getRespositories().then(repos => {
+      this.setState({ loading: false, repos });
+      console.log("repos");
+    });
+  }
+  renderRepositories() {
+    if (this.state.loading) {
+      return <Spinner />;
+    }
+    const items = this.state.repos.map(r => (
+      <Repository key={r.id} name={r.name} />
+    ));
+    return <List>{items}</List>;
+  }
+
   render() {
+    console.log(this.state.loading);
     return (
       <div style={{ width: "100", margin: "auto" }}>
         <Grid className="landing-grid">
@@ -53,6 +94,7 @@ class Landingpage extends Component {
               </div>
             </div>
           </Cell>
+          {this.renderRepositories()}
         </Grid>
       </div>
     );
