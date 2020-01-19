@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
 import Education from "../education";
 import Experience from "../experience";
+import { Avatar } from "../common/avatar";
 
 class Resume extends Component {
   render() {
@@ -10,11 +11,7 @@ class Resume extends Component {
         <Grid>
           <Cell col={4}>
             <div style={{ textAlign: "center" }}>
-              <img
-                src={"/Bitemoji1.png"}
-                alt="avatar"
-                style={{ height: "450px" }}
-              />
+              <Avatar size="m" />
             </div>
             <h2 style={{ paddingTop: "2em" }}>Nick Magnusson</h2>
             <h4 style={{ color: "grey" }}>Programmer</h4>

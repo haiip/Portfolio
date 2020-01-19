@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
+import { Avatar } from "../common/avatar";
 
 class Landingpage extends Component {
   render() {
@@ -7,7 +8,7 @@ class Landingpage extends Component {
       <div style={{ width: "100", margin: "auto" }}>
         <Grid className="landing-grid">
           <Cell col={12}>
-            <img src={"/Bitemoji1.png"} alt="avatar" className="avatar-img" />
+            <Avatar />
             <div className="banner-text">
               <h1>Frontend Developer</h1>
               <hr />
