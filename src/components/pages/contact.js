@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Cell, List, ListItem, ListItemContent } from "react-mdl";
-import imgSrc from "./Bitemoji1.png";
 
 class Contacts extends Component {
   render() {
@@ -9,7 +8,11 @@ class Contacts extends Component {
         <Grid className="contact-grid">
           <Cell col={6}>
             <h2>Nick Magnusson</h2>
-            <img src={imgSrc} alt="avatar" style={{ height: "250px" }} />
+            <img
+              src={"/Bitemoji1.png"}
+              alt="avatar"
+              style={{ height: "250px" }}
+            />
             <p style={{ width: "75%", margin: "auto", paddingTop: "1em" }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
