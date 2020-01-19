@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
-import Education from "../education";
-import Experience from "../experience";
+
 import { Avatar } from "../common/avatar";
+
+const ResumeCell = ({ startYear, endYear, title, description }) => (
+  <Grid>
+    <Cell col={4}>
+      <p>
+        {startYear} - {endYear}
+      </p>
+    </Cell>
+    <Cell col={8}>
+      <h4 style={{ marginTop: "0px" }}>{title}</h4>
+      <p>{description}</p>
+    </Cell>
+  </Grid>
+);
 
 class Resume extends Component {
   render() {
@@ -36,27 +49,27 @@ class Resume extends Component {
           <Cell className="resume-right-col" col={8}>
             <h2>Education</h2>
 
-            <Education
+            <ResumeCell
               startYear={2009}
               endYear={2012}
-              schoolName="Vallentuna Gymnasium"
-              schoolDescription="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+              title="Vallentuna Gymnasium"
+              description="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
             />
 
-            <Education
+            <ResumeCell
               startYear={2013}
               endYear={2015}
-              schoolName="Katolska folkhögskolan"
-              schoolDescription="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter."
+              title="Katolska folkhögskolan"
+              description="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter."
             />
             <hr style={{ borderTop: "3px solid #e22947" }} />
             <h2>Experience</h2>
 
-            <Experience
+            <ResumeCell
               startYear={2014}
               endYear={2016}
-              jobName="First job"
-              jobDescription="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years"
+              title="First job"
+              description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years"
             />
           </Cell>
         </Grid>
