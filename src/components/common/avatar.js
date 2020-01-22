@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import logo from '../../Bitemoji1.svg';
 
 const sizes = {
-  s: { height: "250px" },
-  m: { height: "450px" },
-  l: { height: "600px" }
+  s: { height: '250px' },
+  m: { height: '450px' },
+  l: { height: '600px' }
 };
 
 export const Avatar = ({ size }) => {
@@ -13,5 +14,5 @@ export const Avatar = ({ size }) => {
     selectedSize = sizes.s;
   }
 
-  return <img src={"/Bitemoji1.png"} alt="hej" style={{ ...selectedSize }} />;
+  return <img src={logo} alt="avatar" style={{ ...selectedSize }} />;
 };

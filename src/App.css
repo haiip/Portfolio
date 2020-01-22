@@ -43,14 +43,10 @@
 
 /* resume page css */
 .resume-right-col {
-background: #27221f;
-color: white;
-padding: 2em;
-
+  background: #27221f;
+  color: white;
+  padding: 2em;
 }
-
-
-
 
 /* contact page css */
 
@@ -74,11 +70,11 @@ padding: 2em;
 }
 
 .contact-grid h2 {
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 
 .contact-grid p {
-  font-family: "Oxygen" sans-serif;
+  font-family: 'Oxygen' sans-serif;
   font-weight: bold;
 }
 
@@ -138,4 +134,10 @@ padding: 2em;
   color: white;
   font-size: 5em;
   padding: 8px;
+}
+
+.mdl-list {
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
 }
