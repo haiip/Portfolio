@@ -12,22 +12,21 @@ import {
 import { Avatar } from '../common/avatar';
 import { getRespositories } from '../../api';
 
-const Repository = ({ name, avatar_url, html_url }) => (
-  <List className="" style={{ width: '650px', textAlign: 'Center' }}>
-    <ListItem threeLine>
-      <ListItemContent
-        avatar={<img src={avatar_url} />} // {description ? description : "This repo has no desciroption yet"}
-        subtitle="Bryan Cranston played the role of Walter in Breaking Bad. He is also known for playing Hal in Malcom in the Middle."
-      >
-        {name}
-      </ListItemContent>
-      <ListItemAction>
-        <a href={html_url}>
-          <Icon name="star" />
-        </a>
-      </ListItemAction>
-    </ListItem>
-  </List>
+const Repository = ({ name, avatar_url, html_url, description }) => (
+  <ListItem threeLine>
+    <ListItemContent
+      avatar={<img src={avatar_url} />}
+      subtitle={description}
+      style={{ textAlign: 'center' }}
+    >
+      {name}
+    </ListItemContent>
+    <ListItemAction>
+      <a href={html_url}>
+        <Icon name="star" />
+      </a>
+    </ListItemAction>
+  </ListItem>
 );
 
 class Landingpage extends Component {
@@ -52,9 +51,27 @@ class Landingpage extends Component {
       return <Spinner />;
     }
     const items = this.state.repos.map(r => (
-      <Repository key={r.id} name={r.name} html_url={r.html_url} avatar_url={r.owner.avatar_url} />
+      <Repository
+        key={r.id}
+        name={r.name}
+        html_url={r.html_url}
+        avatar_url={r.owner.avatar_url}
+        description={r.description}
+      />
     ));
-    return <List>{items}</List>;
+    return (
+      <List
+        className=""
+        style={{
+          width: '100%',
+          textAlign: 'Center',
+          display: 'flex',
+          justifyContent: 'space-around'
+        }}
+      >
+        {items}
+      </List>
+    );
   }
 
   render() {
