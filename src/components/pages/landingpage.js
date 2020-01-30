@@ -93,7 +93,7 @@ class Landingpage extends Component {
                 </a>
 
                 {/* GitHub */}
-                <a href="https://google.com" rel="noopener noreferrer" target="_blank">
+                <a href="https://github.com/haiip" rel="noopener noreferrer" target="_blank">
                   <i className="fa fa-github-square" aria-hidden="true" />
                 </a>
 
